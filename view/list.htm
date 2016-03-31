@@ -1,0 +1,23 @@
+<? include 'header.htm'; ?>
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<ul>
+<? foreach($list['list'] as &$l) { ?>
+<li><a href="?a=read&sid=<?=$site?>&url=<?=$l['url']?>" target="_blank"><?=$l['title']?></a></li>
+<? } ?>
+</ul>
+</div>
+</div>
+<nav>
+<ul class="pager">
+<? if($prev_page) { ?>
+<li><a href="?a=list&sid=<?=$site?>&fid=<?=$fid?>&page=<?=$prev_page?>">上一页</a></li>
+<? } else { ?>
+<li>&nbsp; &nbsp; &nbsp;</li>
+<? } ?>
+<li><a href="?a=list&sid=<?=$site?>&fid=<?=$fid?>&page=<?=$next_page?>">下一页</a></li>
+</ul>
+</nav>
+</div>
+<? include 'footer.htm'; ?>

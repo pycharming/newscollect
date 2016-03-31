@@ -1,0 +1,19 @@
+<? include 'header.htm'; ?>
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<ul>
+<? foreach($sl as $site) { ?>
+<? if($action == 'index') { ?>
+<li><a href="?a=<?=(empty($site['category_list']) ? 'list' : 'category')?>&sid=<?=$site['sid']?>"><?=$site['site_title']?></a></li>
+<? }
+if($action == 'category') {
+ foreach($site['category_list'] as $c) { ?>
+<li><a href="?a=list&sid=<?=$site['sid']?>&fid=<?=$c['fid']?>"><?=$c['title']?></a></li>
+<? } } ?>
+<? } ?>
+</ul>
+</div>
+</div>
+</div>
+<? include 'footer.htm'; ?>
